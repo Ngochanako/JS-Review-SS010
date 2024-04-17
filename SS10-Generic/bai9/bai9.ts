@@ -1,15 +1,17 @@
-function decayArray<T>(arr:(T|T[])[]): T[]{
-    let newArray:T[]=[];
+let newArray=[] as any;
+function decayArray<T>(arr:(T|T[])[]){
+    console.log(arr);
     for(let item of arr){
+        console.log(item);
         if(Array.isArray(item)){
-            newArray.push(...decayArray(item));
+            decayArray(item);
         }else{
            newArray.push(item);
         }
     }
-    return newArray;
 }
 
-let arr=[1, [2, [3, 4]], 5, [6]];
-console.log(decayArray(arr));
+let arr=[1, [2, [3, 4]], 5,[6]];
+decayArray(arr);
+console.log(newArray);
 
