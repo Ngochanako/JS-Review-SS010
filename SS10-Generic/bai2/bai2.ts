@@ -1,0 +1,7 @@
+function convert<T>(arr:T[],index1:number,index2:number):T[]{
+    let tmp:T=arr[index1];
+    arr[index1]=arr[index2];
+    arr[index2]=tmp;
+    return arr;
+}
+console.log(convert([1,2,3,4,5],1,3))
