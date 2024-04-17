@@ -1,15 +1,17 @@
 "use strict";
+let newArray = [];
 function decayArray(arr) {
-    let newArray = [];
+    console.log(arr);
     for (let item of arr) {
+        console.log(item);
         if (Array.isArray(item)) {
-            newArray.push(...decayArray(item));
+            decayArray(item);
         }
         else {
             newArray.push(item);
         }
     }
-    return newArray;
 }
 let arr = [1, [2, [3, 4]], 5, [6]];
-console.log(decayArray(arr));
+decayArray(arr);
+console.log(newArray);
