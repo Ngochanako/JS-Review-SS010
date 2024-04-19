@@ -14,4 +14,3 @@ function decayArray<T>(arr:(T|T[])[]){
 let arr=[1, [2, [3, 4]], 5,[6]];
 decayArray(arr);
 console.log(newArray);
-
